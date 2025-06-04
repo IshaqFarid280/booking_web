@@ -18,4 +18,4 @@ use App\Http\Controllers\HomeController;
 //     return view('welcome');
 // }); // Comment out or remove this old route
 
-Route::get('/', [HomeController::class, 'index'])->name('landing'); // This is the new route
+Route::get('/', [HomeController::class, 'index'])->name('index'); // This is the new route
