@@ -3,28 +3,36 @@
     "framework": null,
     "builds": [
         {
-            "src": "public/index.php",
+            "src": "public",
+            "use": "@vercel/static"
+        },
+        {
+            "src": "api/index.php",
             "use": "@vercel/php",
             "config": { "phpVersion": "8.2" }
         }
     ],
     "routes": [
-        { "src": "/css/(.*)", "dest": "/public/css/$1" },
-        { "src": "/js/(.*)", "dest": "/public/js/$1" },
-        { "src": "/images/(.*)", "dest": "/public/images/$1" },
-        { "src": "/favicon.ico", "dest": "/public/favicon.ico" },
-        { "src": "/robots.txt", "dest": "/public/robots.txt" },
-        { "src": "/mix-manifest.json", "dest": "/public/mix-manifest.json" },
-        { "src": "/hot", "dest": "/public/hot" },
+        { "src": "/css/(.*)", "dest": "/css/$1" },
+        { "src": "/js/(.*)", "dest": "/js/$1" },
+        { "src": "/images/(.*)", "dest": "/images/$1" },
+        { "src": "/favicon.ico", "dest": "/favicon.ico" },
+        { "src": "/robots.txt", "dest": "/robots.txt" },
+        { "src": "/build/(.*)", "dest": "/build/$1" },
+        { "src": "/mix-manifest.json", "dest": "/mix-manifest.json" },
+        { "src": "/hot", "dest": "/hot" },
+        { "src": "/test.php", "dest": "/test.php" },
         {
             "src": "/(.*)",
-            "dest": "/public/index.php"
+            "dest": "/api/index.php"
         }
     ],
     "env": {
         "APP_ENV": "production",
         "APP_DEBUG": "false",
+        "APP_URL": "https://booking-web-flax.vercel.app",
         "APP_NAME": "SharanForest",
+        "APP_KEY": "", 
         "LOG_CHANNEL": "stderr",
         "VIEW_COMPILED_PATH": "/tmp/views",
         "SESSION_DRIVER": "array",
