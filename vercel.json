@@ -1,59 +1,30 @@
 {
     "version": 2,
-    "framework": null,
     "functions": {
-        "api/index.php": {
-            "runtime": "@vercel/php@0.7.0",
-            "memory": 1024,
-            "phpVersion": "8.2"
-        }
+      "api/index.php": {
+        "runtime": "vercel-php@0.6.0",
+        "memory": 1024,
+        "phpVersion": "8.2"
+      }
     },
     "routes": [
-        {
-            "src": "/public/(.*)",
-            "dest": "/public/$1"
-        },
-        {
-            "src": "/build/(.*)",
-            "dest": "/public/build/$1"
-        },
-        {
-            "src": "/images/(.*)",
-            "dest": "/public/images/$1"
-        },
-        {
-            "src": "/css/(.*)",
-            "dest": "/public/css/$1"
-        },
-        {
-            "src": "/js/(.*)",
-            "dest": "/public/js/$1"
-        },
-        {
-            "src": "/favicon.ico",
-            "dest": "/public/favicon.ico"
-        },
-        {
-            "src": "/test.php",
-            "dest": "/public/test.php"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/api/index.php"
-        }
+      {
+        "src": "/(.*)",
+        "dest": "/api/index.php"
+      }
     ],
-    "public": true,
     "env": {
-        "APP_ENV": "production",
-        "APP_DEBUG": "false",
-        "APP_URL": "https://booking-web-flax.vercel.app",
-        "APP_NAME": "SharanForest",
-        "APP_KEY": "base64:4QODSH2ULAqBlsT//FGajjSWRQhdBzIeClsr9gVYRi0=", 
-        "LOG_CHANNEL": "stderr",
-        "VIEW_COMPILED_PATH": "/tmp/views",
-        "SESSION_DRIVER": "array",
-        "CACHE_DRIVER": "array",
-        "QUEUE_CONNECTION": "sync",
-        "SERVER_SOFTWARE": "Vercel"
+      "APP_ENV": "production",
+      "APP_DEBUG": "false",
+      "APP_URL": "https://booking-web-flax.vercel.app",
+      "APP_NAME": "SharanForest",
+      "APP_KEY": "base64:your-app-key",
+      "LOG_CHANNEL": "stderr",
+      "VIEW_COMPILED_PATH": "/tmp/views",
+      "SESSION_DRIVER": "array",
+      "CACHE_DRIVER": "array",
+      "QUEUE_CONNECTION": "sync",
+      "SERVER_SOFTWARE": "Vercel"
     }
-} 
+  }
+  
